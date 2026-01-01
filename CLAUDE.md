@@ -8,75 +8,65 @@ Dieses Repository implementiert das **AMW Learning System** - ein Framework für
 
 ### Struktur für Anfragen & Themen
 
-Jede neue Anfrage/Thema wird wie folgt dokumentiert:
+Jede neue Anfrage/Thema wird als **Ordner im Root** dokumentiert:
 
 ```
 /                                      # Root
-├── YYYY-MM-DD-<typ>.md               # Übersichtsdatei pro Thema
-└── docs/
-    └── YYYY-MM-DD-<typ>/             # Detaillierte Inhalte
-        ├── concept.md
-        ├── details.md
-        └── ...
+├── CLAUDE.md                          # Diese Datei
+├── YYYY-MM-DD-<typ>/                  # Ordner pro Thema
+│   ├── <name>.md                      # Haupt-Dokument
+│   ├── <name>-v1.md                   # Version 1 (bei Iterationen)
+│   ├── <name>-v2.md                   # Version 2
+│   └── ...                            # Weitere Dateien/Artefakte
 ```
 
 ### Namenskonvention
 
 | Element | Format | Beispiel |
 |---------|--------|----------|
-| **Root-Datei** | `YYYY-MM-DD-<typ>.md` | `2026-01-01-video-podcast.md` |
-| **docs-Ordner** | `docs/YYYY-MM-DD-<typ>/` | `docs/2026-01-01-video-podcast/` |
-| **Datum** | ISO-Format | `2026-01-01` |
+| **Ordner** | `YYYY-MM-DD-<typ>/` | `2026-01-01-video-podcast/` |
+| **Datum** | ISO-Format (Erstellungsdatum) | `2026-01-01` |
 | **Typ** | Kebab-Case, beschreibend | `video-podcast`, `q1-goals`, `feature-x` |
+| **Dateien** | Beschreibend, optional versioniert | `concept.md`, `plan-v2.md` |
 
 ### Regeln
 
-1. **Root-Datei = Übersicht:** Kurze Zusammenfassung, Links zu Details, Status, nächste Schritte
-2. **docs/<name>/ = Details:** Ausführliche Inhalte, Konzepte, Planungen
-3. **Datum = Erstellungsdatum:** Immer das Datum der ersten Erstellung verwenden
-4. **Typ = Themenbereich:** Beschreibend, keine Abkürzungen
+1. **Ein Ordner pro Thema:** Alle zugehörigen Dateien im selben Ordner
+2. **Datum = Erstellungsdatum:** Immer das Datum der ersten Erstellung verwenden
+3. **Versionierung:** Bei Iterationen durch Agenten: `<name>-v1.md`, `<name>-v2.md`, etc.
+4. **Artefakte:** Zusätzliche Dateien (Bilder, JSON, etc.) im selben Ordner ablegen
 
 ### Beispiel
 
 ```
-# Neue Anfrage "Video-Podcast planen"
+# Neue Anfrage "Video-Podcast planen" am 2026-01-01
 
-1. Root-Datei erstellen:    /2026-01-01-video-podcast.md
-2. Details-Ordner:          /docs/2026-01-01-video-podcast/
-3. Inhalte ablegen:         /docs/2026-01-01-video-podcast/concept.md
-                            /docs/2026-01-01-video-podcast/episodes.md
+/2026-01-01-video-podcast/
+├── concept.md              # Podcast-Konzept
+├── launch-series.md        # Episoden-Planung
+├── concept-v2.md           # Überarbeitete Version (nach Feedback)
+└── thumbnail-template.png  # Artefakt
 ```
 
-### Pflichtfelder in Root-Dateien
+### Versionierung
 
-```markdown
-# Titel
+Wenn ein Agent ein Dokument überarbeitet:
 
-**Erstellt:** YYYY-MM-DD
-**Status:** [Konzeptphase|In Arbeit|Abgeschlossen]
-**Typ:** [Beschreibung]
+| Iteration | Dateiname | Beschreibung |
+|-----------|-----------|--------------|
+| Initial | `concept.md` | Erste Version |
+| Nach Feedback | `concept-v2.md` | Überarbeitung |
+| Nach weiterem Feedback | `concept-v3.md` | Weitere Iteration |
 
-## Überblick
-[Kurze Beschreibung]
-
-## Dokumente
-[Links zu Detail-Dateien in docs/]
-
-## Nächste Schritte
-[Offene Aufgaben]
-
----
-*Work-ID: w-YYYYMMDD-<hash>*
-```
+**Regel:** Alte Versionen behalten, nicht überschreiben.
 
 ## Ordnerstruktur
 
 ```
 /                                      # Repository Root
 ├── CLAUDE.md                          # Diese Datei
-├── YYYY-MM-DD-<typ>.md               # Übersichtsdateien pro Thema
-└── docs/
-    └── YYYY-MM-DD-<typ>/             # Detail-Ordner pro Thema
+├── YYYY-MM-DD-<typ>/                  # Themen-Ordner
+│   └── *.md, *.json, ...              # Inhalte + Artefakte
 
 .mbs/                              # Master Brain Storage (Hidden)
 ├── config.json                    # Systemkonfiguration
