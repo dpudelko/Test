@@ -4,9 +4,70 @@
 
 Dieses Repository implementiert das **AMW Learning System** - ein Framework für Prompt-Tracking, Zeitmessung und Agenten-Selbstverbesserung.
 
+## Dokumentations-Konventionen
+
+### Struktur für Anfragen & Themen
+
+Jede neue Anfrage/Thema wird als **Ordner im Root** dokumentiert:
+
+```
+/                                      # Root
+├── CLAUDE.md                          # Diese Datei
+├── YYYY-MM-DD-<typ>/                  # Ordner pro Thema
+│   ├── <name>.md                      # Haupt-Dokument
+│   ├── <name>-v1.md                   # Version 1 (bei Iterationen)
+│   ├── <name>-v2.md                   # Version 2
+│   └── ...                            # Weitere Dateien/Artefakte
+```
+
+### Namenskonvention
+
+| Element | Format | Beispiel |
+|---------|--------|----------|
+| **Ordner** | `YYYY-MM-DD-<typ>/` | `2026-01-01-video-podcast/` |
+| **Datum** | ISO-Format (Erstellungsdatum) | `2026-01-01` |
+| **Typ** | Kebab-Case, beschreibend | `video-podcast`, `q1-goals`, `feature-x` |
+| **Dateien** | Beschreibend, optional versioniert | `concept.md`, `plan-v2.md` |
+
+### Regeln
+
+1. **Ein Ordner pro Thema:** Alle zugehörigen Dateien im selben Ordner
+2. **Datum = Erstellungsdatum:** Immer das Datum der ersten Erstellung verwenden
+3. **Versionierung:** Bei Iterationen durch Agenten: `<name>-v1.md`, `<name>-v2.md`, etc.
+4. **Artefakte:** Zusätzliche Dateien (Bilder, JSON, etc.) im selben Ordner ablegen
+
+### Beispiel
+
+```
+# Neue Anfrage "Video-Podcast planen" am 2026-01-01
+
+/2026-01-01-video-podcast/
+├── concept.md              # Podcast-Konzept
+├── launch-series.md        # Episoden-Planung
+├── concept-v2.md           # Überarbeitete Version (nach Feedback)
+└── thumbnail-template.png  # Artefakt
+```
+
+### Versionierung
+
+Wenn ein Agent ein Dokument überarbeitet:
+
+| Iteration | Dateiname | Beschreibung |
+|-----------|-----------|--------------|
+| Initial | `concept.md` | Erste Version |
+| Nach Feedback | `concept-v2.md` | Überarbeitung |
+| Nach weiterem Feedback | `concept-v3.md` | Weitere Iteration |
+
+**Regel:** Alte Versionen behalten, nicht überschreiben.
+
 ## Ordnerstruktur
 
 ```
+/                                      # Repository Root
+├── CLAUDE.md                          # Diese Datei
+├── YYYY-MM-DD-<typ>/                  # Themen-Ordner
+│   └── *.md, *.json, ...              # Inhalte + Artefakte
+
 .mbs/                              # Master Brain Storage (Hidden)
 ├── config.json                    # Systemkonfiguration
 ├── schema.json                    # JSON-Schema für Datenmodelle
