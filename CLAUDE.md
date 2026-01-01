@@ -4,9 +4,80 @@
 
 Dieses Repository implementiert das **AMW Learning System** - ein Framework für Prompt-Tracking, Zeitmessung und Agenten-Selbstverbesserung.
 
+## Dokumentations-Konventionen
+
+### Struktur für Anfragen & Themen
+
+Jede neue Anfrage/Thema wird wie folgt dokumentiert:
+
+```
+/                                      # Root
+├── YYYY-MM-DD-<typ>.md               # Übersichtsdatei pro Thema
+└── docs/
+    └── YYYY-MM-DD-<typ>/             # Detaillierte Inhalte
+        ├── concept.md
+        ├── details.md
+        └── ...
+```
+
+### Namenskonvention
+
+| Element | Format | Beispiel |
+|---------|--------|----------|
+| **Root-Datei** | `YYYY-MM-DD-<typ>.md` | `2026-01-01-video-podcast.md` |
+| **docs-Ordner** | `docs/YYYY-MM-DD-<typ>/` | `docs/2026-01-01-video-podcast/` |
+| **Datum** | ISO-Format | `2026-01-01` |
+| **Typ** | Kebab-Case, beschreibend | `video-podcast`, `q1-goals`, `feature-x` |
+
+### Regeln
+
+1. **Root-Datei = Übersicht:** Kurze Zusammenfassung, Links zu Details, Status, nächste Schritte
+2. **docs/<name>/ = Details:** Ausführliche Inhalte, Konzepte, Planungen
+3. **Datum = Erstellungsdatum:** Immer das Datum der ersten Erstellung verwenden
+4. **Typ = Themenbereich:** Beschreibend, keine Abkürzungen
+
+### Beispiel
+
+```
+# Neue Anfrage "Video-Podcast planen"
+
+1. Root-Datei erstellen:    /2026-01-01-video-podcast.md
+2. Details-Ordner:          /docs/2026-01-01-video-podcast/
+3. Inhalte ablegen:         /docs/2026-01-01-video-podcast/concept.md
+                            /docs/2026-01-01-video-podcast/episodes.md
+```
+
+### Pflichtfelder in Root-Dateien
+
+```markdown
+# Titel
+
+**Erstellt:** YYYY-MM-DD
+**Status:** [Konzeptphase|In Arbeit|Abgeschlossen]
+**Typ:** [Beschreibung]
+
+## Überblick
+[Kurze Beschreibung]
+
+## Dokumente
+[Links zu Detail-Dateien in docs/]
+
+## Nächste Schritte
+[Offene Aufgaben]
+
+---
+*Work-ID: w-YYYYMMDD-<hash>*
+```
+
 ## Ordnerstruktur
 
 ```
+/                                      # Repository Root
+├── CLAUDE.md                          # Diese Datei
+├── YYYY-MM-DD-<typ>.md               # Übersichtsdateien pro Thema
+└── docs/
+    └── YYYY-MM-DD-<typ>/             # Detail-Ordner pro Thema
+
 .mbs/                              # Master Brain Storage (Hidden)
 ├── config.json                    # Systemkonfiguration
 ├── schema.json                    # JSON-Schema für Datenmodelle
