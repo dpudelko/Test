@@ -1,0 +1,16 @@
+{
+  "prompt_id": "p-0001",
+  "work_id": "w-20260101-q1goals",
+  "agent_id": "agent-structurer-v1",
+  "timestamp_start": "2026-01-01T10:00:00Z",
+  "timestamp_end": "2026-01-01T10:05:00Z",
+  "duration_ms": 300000,
+  "prompt_type": "structuring",
+  "input_prompt": "Neue Ziele für Q1/2026 - Kommunikation über Slack stärken, Marketing savvytec kurz/mittel/langfristig angehen, Video Podcast realisieren, SaaS Ideen umsetzen und launchen",
+  "context_refs": [],
+  "model": "claude-opus-4-5",
+  "output_summary": "Strukturierte OKR-basierte Zielplanung mit 4 Objectives und 28 Key Results erstellt",
+  "output_quality": "good",
+  "human_feedback": null,
+  "followup_required": false
+}

@@ -1,0 +1,17 @@
+{
+  "work_id": "w-20260101-q1goals",
+  "total_agent_time_sec": 300,
+  "total_human_time_sec_est": 60,
+  "total_elapsed_sec": 360,
+  "iterations": 1,
+  "prompt_loops": {
+    "structuring": 1
+  },
+  "agent_performance": {
+    "agent-structurer-v1": {
+      "executions": 1,
+      "avg_duration_ms": 300000,
+      "success_rate": 1.0
+    }
+  }
+}
