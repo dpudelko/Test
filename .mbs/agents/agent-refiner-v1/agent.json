@@ -1,0 +1,37 @@
+{
+  "agent_id": "agent-refiner-v1",
+  "version": "1.0.0",
+  "role": "Refiner",
+  "goal": "Verbessere und verfeinere bestehende Inhalte auf höchste Qualität",
+  "inputs": [
+    "draft.md",
+    "feedback.json",
+    "quality_criteria.json"
+  ],
+  "outputs": [
+    "refined.md",
+    "quality_report.json",
+    "state.refined"
+  ],
+  "strengths": [
+    "Präzises Lektorat",
+    "Konsistenz-Prüfung",
+    "Feedback-Integration"
+  ],
+  "known_weaknesses": [
+    "Kann zu konservativ verfeinern",
+    "Stilbrüche werden manchmal nicht erkannt"
+  ],
+  "guardrails": [
+    "Ursprüngliche Intention bewahren",
+    "Änderungen müssen nachvollziehbar sein",
+    "Qualitätskriterien müssen explizit geprüft werden"
+  ],
+  "metrics": {
+    "avg_iterations": 0,
+    "success_rate": 0,
+    "total_executions": 0
+  },
+  "created_at": "2025-12-29T10:00:00+01:00",
+  "updated_at": "2025-12-29T10:00:00+01:00"
+}

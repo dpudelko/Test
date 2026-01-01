@@ -1,0 +1,18 @@
+{
+  "prompt_id": "p-0001",
+  "work_id": "w-20251229-example",
+  "agent_id": "agent-sense-maker-v1",
+  "event_no_start": 1,
+  "event_no_end": 2,
+  "timestamp_start": "2025-12-29T10:00:00+01:00",
+  "timestamp_end": "2025-12-29T10:00:15+01:00",
+  "duration_ms": 15000,
+  "prompt_type": "classification",
+  "input_prompt": "Ich brauche eine Struktur für ein CRM Datenmodell für unser Startup. Wir haben B2B Kunden mit komplexen Hierarchien.",
+  "context_refs": [],
+  "model": "claude",
+  "output_summary": "Intent erkannt: Datenmodell-Erstellung. Work-Type: creation. Confidence: 0.9",
+  "output_quality": "good",
+  "human_feedback": null,
+  "followup_required": false
+}

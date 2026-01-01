@@ -1,0 +1,78 @@
+{
+  "description": "Event-Log für Work w-20251229-example",
+  "work_id": "w-20251229-example",
+  "events": [
+    {
+      "no": 1,
+      "ts": "2025-12-29T10:00:00+01:00",
+      "type": "E13",
+      "payload": {
+        "prompt_id": "p-0001",
+        "agent_id": "agent-sense-maker-v1",
+        "duration_ms": 15000,
+        "quality": "good"
+      }
+    },
+    {
+      "no": 3,
+      "ts": "2025-12-29T10:01:28+01:00",
+      "type": "E13",
+      "payload": {
+        "prompt_id": "p-0002",
+        "agent_id": "agent-structurer-v1",
+        "duration_ms": 28000,
+        "quality": "poor"
+      }
+    },
+    {
+      "no": 4,
+      "ts": "2025-12-29T10:01:30+01:00",
+      "type": "E14",
+      "payload": {
+        "prompt_id": "p-0002",
+        "iteration_count": 1
+      }
+    },
+    {
+      "no": 5,
+      "ts": "2025-12-29T10:02:35+01:00",
+      "type": "E13",
+      "payload": {
+        "prompt_id": "p-0003",
+        "agent_id": "agent-structurer-v1",
+        "duration_ms": 35000,
+        "quality": "ok"
+      }
+    },
+    {
+      "no": 6,
+      "ts": "2025-12-29T10:02:37+01:00",
+      "type": "E14",
+      "payload": {
+        "prompt_id": "p-0003",
+        "iteration_count": 2
+      }
+    },
+    {
+      "no": 11,
+      "ts": "2025-12-29T10:05:45+01:00",
+      "type": "E13",
+      "payload": {
+        "prompt_id": "p-0006",
+        "agent_id": "agent-structurer-v1",
+        "duration_ms": 45000,
+        "quality": "excellent"
+      }
+    },
+    {
+      "no": 12,
+      "ts": "2025-12-29T10:05:50+01:00",
+      "type": "E16",
+      "payload": {
+        "pattern_id": "FP-struct-001",
+        "agent_id": "agent-structurer-v1",
+        "trigger_condition": "iterations >= 3 AND initial_quality == poor"
+      }
+    }
+  ]
+}

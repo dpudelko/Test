@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "description": "AMW Agent Registry - Zentrale Verwaltung aller Agenten",
+  "agents": [
+    {
+      "agent_id": "agent-sense-maker-v1",
+      "role": "Intent & Work-Type Erkennung",
+      "description": "Erkennt Absicht und klassifiziert eingehende Anfragen",
+      "status": "active",
+      "created_at": "2025-12-29T10:00:00+01:00",
+      "updated_at": "2025-12-29T10:00:00+01:00"
+    },
+    {
+      "agent_id": "agent-structurer-v1",
+      "role": "Struktur & Denkachsen",
+      "description": "Erzeugt belastbare, logisch saubere Strukturen",
+      "status": "active",
+      "created_at": "2025-12-29T10:00:00+01:00",
+      "updated_at": "2025-12-29T10:00:00+01:00"
+    },
+    {
+      "agent_id": "agent-producer-v1",
+      "role": "Content Producer",
+      "description": "Erstellt konkrete Inhalte basierend auf Strukturvorgaben",
+      "status": "active",
+      "created_at": "2025-12-29T10:00:00+01:00",
+      "updated_at": "2025-12-29T10:00:00+01:00"
+    },
+    {
+      "agent_id": "agent-refiner-v1",
+      "role": "Quality Refiner",
+      "description": "Verbessert und verfeinert bestehende Inhalte",
+      "status": "active",
+      "created_at": "2025-12-29T10:00:00+01:00",
+      "updated_at": "2025-12-29T10:00:00+01:00"
+    },
+    {
+      "agent_id": "agent-archivist-v1",
+      "role": "Knowledge Archivist",
+      "description": "Archiviert, indexiert und macht Wissen auffindbar",
+      "status": "active",
+      "created_at": "2025-12-29T10:00:00+01:00",
+      "updated_at": "2025-12-29T10:00:00+01:00"
+    }
+  ]
+}

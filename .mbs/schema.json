@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AMW Learning System Schema",
+  "version": "1.1.0",
+  "description": "Schema-Definitionen für Prompt-Tracking, Logging und Agenten-Lernen",
+
+  "definitions": {
+    "prompt_record": {
+      "type": "object",
+      "required": ["prompt_id", "work_id", "agent_id", "timestamp_start", "prompt_type", "input_prompt"],
+      "properties": {
+        "prompt_id": {
+          "type": "string",
+          "pattern": "^p-[0-9]{4}$",
+          "description": "Eindeutige Prompt-ID im Format p-XXXX"
+        },
+        "work_id": {
+          "type": "string",
+          "pattern": "^w-[0-9]{8}-[a-z0-9]+$",
+          "description": "Work-ID im Format w-YYYYMMDD-hash"
+        },
+        "agent_id": {
+          "type": "string",
+          "description": "ID des ausführenden Agenten"
+        },
+        "event_no_start": {
+          "type": "integer",
+          "description": "Start-Event-Nummer für Timeline-Kopplung"
+        },
+        "event_no_end": {
+          "type": "integer",
+          "description": "End-Event-Nummer für Timeline-Kopplung"
+        },
+        "timestamp_start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timestamp_end": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "duration_ms": {
+          "type": "integer",
+          "description": "Ausführungsdauer in Millisekunden"
+        },
+        "prompt_type": {
+          "type": "string",
+          "enum": ["classification", "structuring", "drafting", "refining", "question", "research"],
+          "description": "Art des Prompts"
+        },
+        "input_prompt": {
+          "type": "string",
+          "description": "Der tatsächliche Prompt-Text"
+        },
+        "context_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Referenzen auf Kontext-Dateien"
+        },
+        "model": {
+          "type": "string",
+          "description": "Verwendetes LLM"
+        },
+        "output_summary": {
+          "type": "string",
+          "description": "Kurzzusammenfassung des Outputs"
+        },
+        "output_quality": {
+          "type": "string",
+          "enum": ["poor", "ok", "good", "excellent"],
+          "description": "Qualitätsbewertung"
+        },
+        "human_feedback": {
+          "type": ["string", "null"],
+          "description": "Explizites menschliches Feedback"
+        },
+        "followup_required": {
+          "type": "boolean",
+          "description": "Wurde nachgepromptet?"
+        }
+      }
+    },
+
+    "agent_definition": {
+      "type": "object",
+      "required": ["agent_id", "role", "goal", "inputs", "outputs"],
+      "properties": {
+        "agent_id": {"type": "string"},
+        "version": {"type": "string"},
+        "role": {"type": "string"},
+        "goal": {"type": "string"},
+        "inputs": {"type": "array", "items": {"type": "string"}},
+        "outputs": {"type": "array", "items": {"type": "string"}},
+        "strengths": {"type": "array", "items": {"type": "string"}},
+        "known_weaknesses": {"type": "array", "items": {"type": "string"}},
+        "guardrails": {"type": "array", "items": {"type": "string"}},
+        "metrics": {
+          "type": "object",
+          "properties": {
+            "avg_iterations": {"type": "number"},
+            "success_rate": {"type": "number"},
+            "total_executions": {"type": "integer"}
+          }
+        }
+      }
+    },
+
+    "timing_aggregate": {
+      "type": "object",
+      "required": ["work_id", "total_agent_time_sec", "iterations"],
+      "properties": {
+        "work_id": {"type": "string"},
+        "total_agent_time_sec": {"type": "number"},
+        "total_human_time_sec_est": {"type": "number"},
+        "total_elapsed_sec": {"type": "number"},
+        "iterations": {"type": "integer"},
+        "prompt_loops": {
+          "type": "object",
+          "additionalProperties": {"type": "integer"}
+        },
+        "agent_performance": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "executions": {"type": "integer"},
+              "avg_duration_ms": {"type": "number"},
+              "success_rate": {"type": "number"}
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "event_types": {
+    "E13_PROMPT_EXECUTED": {
+      "description": "Ein Prompt wurde ausgeführt",
+      "payload": ["prompt_id", "agent_id", "duration_ms", "quality"]
+    },
+    "E14_PROMPT_FEEDBACK_IMPLICIT": {
+      "description": "Implizites Feedback durch Nachprompten",
+      "payload": ["prompt_id", "iteration_count"]
+    },
+    "E15_AGENT_RULE_UPDATED": {
+      "description": "Eine Agentenregel wurde aktualisiert",
+      "payload": ["agent_id", "rule_id", "change_type"]
+    },
+    "E16_FAILURE_PATTERN_DETECTED": {
+      "description": "Ein Fehlermuster wurde erkannt",
+      "payload": ["pattern_id", "agent_id", "trigger_condition"]
+    },
+    "E17_IMPROVEMENT_APPLIED": {
+      "description": "Eine Verbesserung wurde angewandt",
+      "payload": ["improvement_id", "agent_id", "affected_prompts"]
+    }
+  }
+}

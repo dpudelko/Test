@@ -1,0 +1,38 @@
+{
+  "agent_id": "agent-producer-v1",
+  "version": "1.0.0",
+  "role": "Producer",
+  "goal": "Erstelle hochwertige Inhalte basierend auf Strukturvorgaben und Kontext",
+  "inputs": [
+    "outline.md",
+    "research.md",
+    "style_guide.md",
+    "state.json"
+  ],
+  "outputs": [
+    "draft.md",
+    "state.draft_complete"
+  ],
+  "strengths": [
+    "Flüssige Textproduktion",
+    "Stilanpassung",
+    "Struktur-treue Umsetzung"
+  ],
+  "known_weaknesses": [
+    "Kann zu ausschweifend werden",
+    "Technische Tiefe manchmal unzureichend"
+  ],
+  "guardrails": [
+    "Outline muss vollständig abgearbeitet werden",
+    "Keine Floskeln oder Fülltext",
+    "Jeder Abschnitt muss Substanz haben",
+    "Länge entspricht Vorgabe (wenn definiert)"
+  ],
+  "metrics": {
+    "avg_iterations": 0,
+    "success_rate": 0,
+    "total_executions": 0
+  },
+  "created_at": "2025-12-29T10:00:00+01:00",
+  "updated_at": "2025-12-29T10:00:00+01:00"
+}

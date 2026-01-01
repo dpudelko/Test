@@ -1,0 +1,39 @@
+{
+  "work_id": "w-20251229-example",
+  "total_agent_time_sec": 203,
+  "total_human_time_sec_est": 420,
+  "total_elapsed_sec": 345,
+  "iterations": 6,
+  "prompt_loops": {
+    "classification": 1,
+    "structuring": 5,
+    "drafting": 0,
+    "refining": 0
+  },
+  "quality_progression": [
+    {"prompt_id": "p-0001", "quality": "good"},
+    {"prompt_id": "p-0002", "quality": "poor"},
+    {"prompt_id": "p-0003", "quality": "ok"},
+    {"prompt_id": "p-0004", "quality": "ok"},
+    {"prompt_id": "p-0005", "quality": "good"},
+    {"prompt_id": "p-0006", "quality": "excellent"}
+  ],
+  "agent_performance": {
+    "agent-sense-maker-v1": {
+      "executions": 1,
+      "avg_duration_ms": 15000,
+      "success_rate": 1.0
+    },
+    "agent-structurer-v1": {
+      "executions": 5,
+      "avg_duration_ms": 37600,
+      "success_rate": 0.2,
+      "iterations_to_success": 5
+    }
+  },
+  "insights": {
+    "bottleneck_agent": "agent-structurer-v1",
+    "improvement_needed": true,
+    "suggested_action": "Structurer benötigt explizitere Anforderungen an Vollständigkeit"
+  }
+}

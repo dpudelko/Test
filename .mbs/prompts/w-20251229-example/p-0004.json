@@ -1,0 +1,21 @@
+{
+  "prompt_id": "p-0004",
+  "work_id": "w-20251229-example",
+  "agent_id": "agent-structurer-v1",
+  "event_no_start": 7,
+  "event_no_end": 8,
+  "timestamp_start": "2025-12-29T10:03:00+01:00",
+  "timestamp_end": "2025-12-29T10:03:42+01:00",
+  "duration_ms": 42000,
+  "prompt_type": "structuring",
+  "input_prompt": "Füge konkrete Attribute hinzu. Was speichern wir für Kunde, Kontakt, Hierarchie?",
+  "context_refs": [
+    "intent.json",
+    "p-0003.output"
+  ],
+  "model": "claude",
+  "output_summary": "Attribute hinzugefügt, aber keine Datentypen",
+  "output_quality": "ok",
+  "human_feedback": "Datentypen fehlen. Welche Felder sind Pflicht?",
+  "followup_required": true
+}

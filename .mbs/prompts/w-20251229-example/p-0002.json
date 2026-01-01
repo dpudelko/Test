@@ -1,0 +1,20 @@
+{
+  "prompt_id": "p-0002",
+  "work_id": "w-20251229-example",
+  "agent_id": "agent-structurer-v1",
+  "event_no_start": 3,
+  "event_no_end": 4,
+  "timestamp_start": "2025-12-29T10:01:00+01:00",
+  "timestamp_end": "2025-12-29T10:01:28+01:00",
+  "duration_ms": 28000,
+  "prompt_type": "structuring",
+  "input_prompt": "Erstelle eine Struktur für ein CRM Datenmodell mit B2B Kundenhierarchien",
+  "context_refs": [
+    "intent.json"
+  ],
+  "model": "claude",
+  "output_summary": "Erste grobe Struktur mit 3 Hauptentitäten: Kunde, Kontakt, Hierarchie",
+  "output_quality": "poor",
+  "human_feedback": "Zu oberflächlich, Relationen fehlen komplett, keine Details zu Hierarchietypen",
+  "followup_required": true
+}

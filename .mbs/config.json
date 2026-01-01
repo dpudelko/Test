@@ -1,0 +1,42 @@
+{
+  "version": "1.1.0",
+  "name": "Agentic Master Workspace - Learning System",
+  "description": "Prompt-Tracking, Zeitmessung, Logs und Lernmasse für Agenten-Selbstverbesserung",
+
+  "learning": {
+    "enabled": true,
+    "auto_detect_patterns": true,
+    "min_iterations_for_pattern": 3,
+    "quality_threshold": "ok",
+    "auto_update_templates": false
+  },
+
+  "tracking": {
+    "prompt_tracking": true,
+    "time_tracking": true,
+    "event_logging": true,
+    "human_time_estimation": true
+  },
+
+  "agents": {
+    "default_model": "claude",
+    "guardrails_enforcement": "strict",
+    "metrics_collection": true
+  },
+
+  "done_criteria_v1_1": [
+    "Jede Prompt-Interaktion ist nachvollziehbar",
+    "Zeit & Iterationen sind messbar",
+    "Failure Patterns sind explizit",
+    "Agentenbeschreibungen sind versionierbar & lernfähig",
+    "Verbesserungen passieren automatisch, nicht ad hoc"
+  ],
+
+  "agent_types": [
+    "Sense-Maker",
+    "Structurer",
+    "Producer",
+    "Refiner",
+    "Archivist"
+  ]
+}
